@@ -1,0 +1,66 @@
+.not-found-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  padding: var(--spacing-lg);
+}
+
+.not-found-content {
+  text-align: center;
+  color: var(--white);
+}
+
+.error-code {
+  font-size: 120px;
+  font-weight: 700;
+  opacity: 0.8;
+  margin-bottom: var(--spacing-lg);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.not-found-page h1 {
+  color: var(--white);
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.not-found-page p {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-lg);
+}
+
+.not-found-page .btn-primary {
+  background-color: var(--white);
+  color: var(--primary-blue);
+  min-width: 200px;
+}
+
+.not-found-page .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 640px) {
+  .error-code {
+    font-size: 80px;
+  }
+
+  .not-found-page h1 {
+    font-size: 32px;
+  }
+
+  .not-found-page p {
+    font-size: var(--font-size-base);
+  }
+}

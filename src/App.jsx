@@ -1,87 +1,33 @@
-﻿import { useState, useEffect } from "react";
-import {
-  Navbar,
-  Hero,
-  ScrollCards,
-  Timeline,
-  MorphGrid,
-  TextSection,
-  MagneticSection,
-  StatsBar,
-  Footer,
-} from "./components";
-
-/* ─── Bootstrap 5 + Google Fonts via CDN (injected once) ─── */
-const BOOTSTRAP_CSS = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css";
-const GSAP_CDN = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js";
-const CSS = "";
-
-function useScript(src) {
-  const [ready, setReady] = useState(() => !!document.querySelector(`script[src="${src}"]`));
-
-  useEffect(() => {
-    if (ready) return;
-    const s = document.createElement("script");
-    s.src = src;
-    s.async = true;
-    s.onload = () => setReady(true);
-    document.head.appendChild(s);
-    return () => {
-      if (s.parentNode) s.parentNode.removeChild(s);
-    };
-  }, [src, ready]);
-
-  return ready;
-}
-
-function useStylesheet(href) {
-  useEffect(() => {
-    if (document.querySelector(`link[href="${href}"]`)) return;
-    const l = document.createElement("link");
-    l.rel = "stylesheet";
-    l.href = href;
-    document.head.appendChild(l);
-  }, [href]);
-}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import FloatingCTAs from './components/FloatingCTAs';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import ServiceDetail from './pages/ServiceDetail';
+import Team from './pages/Team';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+import './styles/global.css';
 
 export default function App() {
-  useStylesheet(BOOTSTRAP_CSS);
-  useScript(GSAP_CDN);
-
-  const [scrolled, setScrolled] = useState(false);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-      setScrolled(window.scrollY > 60);
-      setProgress(pct);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const style = document.createElement("style");
-    style.textContent = CSS;
-    document.head.appendChild(style);
-    return () => document.head.removeChild(style);
-  }, []);
-
   return (
-    <>
-      <div id="scroll-prog" style={{ width: `${progress}%` }} />
-      <Navbar scrolled={scrolled} />
-      <main>
-        <Hero />
-        <ScrollCards />
-        <Timeline />
-        <MorphGrid />
-        <TextSection />
-        <MagneticSection />
-        <StatsBar />
-      </main>
-      <Footer />
-    </>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/service/:slug" element={<ServiceDetail />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+        <FloatingCTAs />
+      </div>
+    </Router>
   );
 }

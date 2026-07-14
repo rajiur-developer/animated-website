@@ -1,0 +1,125 @@
+.hero-section {
+  background: linear-gradient(135deg, #0f4c81 0%, #2E7DAE 100%);
+  color: var(--white);
+  padding: var(--spacing-3xl) var(--spacing-md);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text h1 {
+  color: var(--white);
+  margin-bottom: var(--spacing-lg);
+  font-size: clamp(32px, 6vw, 48px);
+}
+
+.hero-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  max-width: 600px;
+}
+
+.hero-cta .btn-primary {
+  background-color: var(--white);
+  color: var(--primary-blue);
+}
+
+.hero-cta .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.hero-cta .btn-outline {
+  color: var(--white);
+  border-color: var(--white);
+  background-color: transparent;
+}
+
+.hero-cta .btn-outline:hover {
+  background-color: var(--white);
+  color: var(--primary-blue);
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-placeholder {
+  font-size: 200px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: var(--font-size-base);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .hero-placeholder {
+    font-size: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .hero-cta {
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
+
+  .hero-placeholder {
+    font-size: 80px;
+  }
+}

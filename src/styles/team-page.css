@@ -1,0 +1,224 @@
+.team-page {
+  min-height: 100vh;
+}
+
+.page-hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: var(--white);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  text-align: center;
+}
+
+.page-hero h1 {
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+}
+
+.page-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-section {
+  background-color: var(--white);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.team-member-card {
+  background-color: var(--off-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  text-align: center;
+  transition: all var(--transition-base);
+  border: 1px solid var(--light-gray);
+}
+
+.team-member-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-blue);
+  transform: translateY(-8px);
+  background-color: var(--white);
+}
+
+.member-avatar {
+  font-size: 80px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.team-member-card h2 {
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-md);
+}
+
+.member-specialty {
+  color: var(--success);
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.member-credentials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.credential {
+  text-align: center;
+}
+
+.credential strong {
+  display: block;
+  color: var(--text-dark);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.credential p {
+  color: var(--text-light);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.member-bio {
+  color: var(--text-light);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+}
+
+.member-services {
+  text-align: left;
+  margin-bottom: var(--spacing-lg);
+  background-color: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+}
+
+.member-services h4 {
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.member-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.member-services li {
+  color: var(--text-light);
+  padding: 8px 0;
+  font-size: var(--font-size-sm);
+}
+
+.team-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  border-radius: var(--radius-lg);
+}
+
+.stat {
+  text-align: center;
+  color: var(--white);
+}
+
+.stat-value {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.stat p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-base);
+  margin: 0;
+}
+
+.team-cta-section {
+  background: linear-gradient(135deg, rgba(15, 76, 129, 0.05), rgba(74, 159, 216, 0.05));
+  padding: var(--spacing-3xl) var(--spacing-md);
+}
+
+.team-cta {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--white);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-cta h2 {
+  color: var(--primary-blue);
+}
+
+.team-cta p {
+  font-size: var(--font-size-lg);
+  color: var(--text-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .member-credentials {
+    grid-template-columns: 1fr;
+  }
+
+  .team-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .page-hero h1 {
+    font-size: 28px;
+  }
+
+  .team-member-card {
+    padding: var(--spacing-lg);
+  }
+
+  .member-avatar {
+    font-size: 60px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .team-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-value {
+    font-size: 36px;
+  }
+
+  .team-cta {
+    padding: var(--spacing-lg);
+  }
+}

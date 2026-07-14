@@ -1,0 +1,116 @@
+.services-section {
+  background-color: var(--white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.service-card {
+  background-color: var(--off-white);
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+}
+
+.service-icon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.service-card h3 {
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-xl);
+}
+
+.service-card p {
+  color: var(--text-light);
+  font-size: var(--font-size-sm);
+  margin-bottom: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+.service-count {
+  font-size: var(--font-size-sm);
+  color: var(--success);
+  font-weight: 600;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.service-arrow {
+  color: var(--primary-blue);
+  font-size: 24px;
+  transition: transform var(--transition-base);
+  opacity: 0;
+}
+
+.service-card:hover .service-arrow {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+.services-cta {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, rgba(15, 76, 129, 0.05), rgba(74, 159, 216, 0.05));
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.services-cta p {
+  font-size: var(--font-size-lg);
+  color: var(--text-dark);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-icon {
+    font-size: 36px;
+  }
+
+  .service-card h3 {
+    font-size: var(--font-size-lg);
+  }
+}

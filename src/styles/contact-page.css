@@ -1,0 +1,227 @@
+.contact-page {
+  min-height: 100vh;
+}
+
+.page-hero {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: var(--white);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  text-align: center;
+}
+
+.page-hero h1 {
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+}
+
+.page-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  background-color: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+}
+
+.contact-info-section h2 {
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.contact-item {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-lg);
+  background-color: var(--off-white);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.contact-item:hover {
+  background-color: var(--white);
+  border-left: 4px solid var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-icon {
+  font-size: 36px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-item h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-item p {
+  color: var(--text-light);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.contact-item p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-item a {
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.text-small {
+  font-size: var(--font-size-xs) !important;
+}
+
+.contact-social {
+  padding-top: var(--spacing-lg);
+  border-top: 2px solid var(--light-gray);
+  margin-top: var(--spacing-lg);
+}
+
+.contact-social h3 {
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
+.social-links a:hover {
+  background-color: var(--secondary-blue);
+  transform: translateY(-3px);
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.map-container {
+  background-color: var(--off-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 1;
+  border: 2px solid var(--light-gray);
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, rgba(15, 76, 129, 0.05), rgba(74, 159, 216, 0.05));
+}
+
+.map-placeholder p {
+  color: var(--text-light);
+  margin: var(--spacing-sm) 0;
+}
+
+.map-placeholder p:first-child {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.booking-card {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: var(--white);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.booking-card h3 {
+  color: var(--white);
+  margin-bottom: var(--spacing-md);
+}
+
+.booking-card p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--spacing-lg);
+}
+
+.booking-card .btn-primary {
+  background-color: var(--white);
+  color: var(--primary-blue);
+  width: 100%;
+}
+
+.booking-card .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .map-container {
+    aspect-ratio: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .page-hero h1 {
+    font-size: 28px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-icon {
+    min-width: auto;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
